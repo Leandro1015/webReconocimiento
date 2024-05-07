@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulario de Alumno</title>
+    </head>
+    <body>
+        <h2>Formulario de Alumno</h2>
+        <form action="procesar_formulario.php" method="POST">
+            <label>Momento:</label><br>
+            <input type="text" name="momento"><br><br>
+
+            <label>Texto:</label><br>
+            <input type="text" name="texto"><br><br>
+
+            <label>Alumno:</label><br>
+            <select name="alumno">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select><br><br>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </body>
+</html>

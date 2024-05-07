@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulario de Alumno</title>
+    </head>
+    <body>
+        <h2>Formulario de Alumno</h2>
+        <form action="procesar_formulario.php" method="POST">
+            <label>ID de Alumno:</label><br>
+            <input type="number" name="idAlumno"><br><br>
+
+            <label>Nombre:</label><br>
+            <input type="text" name="nombre"><br><br>
+
+            <label>Correo Electrónico:</label><br>
+            <input type="email" name="correo"><br><br>
+
+            <label>Contraseña:</label><br>
+            <input type="password" name="contrasenia"><br><br>
+
+            <label>Página Web de Reconocimiento:</label><br>
+            <input type="text" name="webReconocimiento"><br><br>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </body>
+</html>
