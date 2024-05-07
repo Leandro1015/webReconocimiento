@@ -7,7 +7,7 @@
         <title>Formulario de inicio de sesión</title>
     </head>
     <body>
-        <div class="container">
+        <div class="contenedor">
             <h2>Iniciar Sesión</h2>
             <form action="../verificar.php" method="post">
                 <label>Usuario:</label><br/>
