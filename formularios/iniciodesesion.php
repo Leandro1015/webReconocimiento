@@ -10,14 +10,16 @@
         <div class="contenedor">
             <h2>Iniciar Sesión</h2>
             <form action="../verificar.php" method="post">
-                <label>Usuario:</label><br/>
-                <input type="text" name="usuario"><br/>
+                <label>Alumno:</label><br/>
+                <input type="text" name="alumno"><br/>
 
                 <label>Contraseña:</label><br/>
                 <input type="password" name="contrasenia"><br/><br/>
 
                 <input type="submit" value="Enviar">
             </form>
+            <!-- Botón o enlace para redirigir a registrar.php -->
+            <a href="registrar.php">¿No tienes una cuenta? ¡Regístrate!</a>
             <?php 
                 if (isset($_GET["mensaje"])) { 
                     echo "<p class='error-message'>{$_GET['mensaje']}</p>"; 

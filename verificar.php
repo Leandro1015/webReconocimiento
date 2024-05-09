@@ -4,11 +4,11 @@
     $conexion = $conectarInstancia -> conexion;
    
     // Obtener los datos del formulario
-    $usuario = $_POST['usuario'];
+    $alumno = $_POST['alumno'];
     $contrasenia = $_POST['contrasenia'];
 
-    // Consultar la base de datos para verificar el usuario y la contraseña
-    $sql = "SELECT * FROM alumno WHERE nombre='$usuario' AND contrasenia='$contrasenia'";
+    // Consultar la base de datos para verificar el alumno y la contraseña
+    $sql = "SELECT * FROM alumno WHERE nombre='$alumno' AND contrasenia='$contrasenia'";
     $resultado = $conexion->query($sql);
 
     if ($resultado->num_rows > 0) {
