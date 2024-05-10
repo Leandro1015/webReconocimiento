@@ -1,5 +1,5 @@
 <?php
-    require_once 'conexion.php';
+    require 'conexion.php';
 
     class Identificacion extends Conexion
     {
@@ -13,7 +13,7 @@
             return $exito;
         }
 
-        public function iniciarSesion($correo, $contrasena)
+        public function iniciarSesion($correo, $contrasenia)
         {
             $sql = "SELECT * FROM alumno WHERE nombre='$usuario' AND contrasenia='$contrasenia'";
             $resultado = $this->conexion->query($sql);

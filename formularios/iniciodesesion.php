@@ -18,8 +18,8 @@
 
                 <input type="submit" value="Enviar">
             </form>
-            <!-- Botón o enlace para redirigir a registrar.php -->
-            <a href="registrar.php">¿No tienes una cuenta? ¡Regístrate!</a>
+            <!-- Botón o enlace para redirigir a formRegistro.html -->
+            <a href="formRegistro.html">¿No tienes una cuenta? ¡Regístrate!</a>
             <?php 
                 if (isset($_GET["mensaje"])) { 
                     echo "<p class='error-message'>{$_GET['mensaje']}</p>"; 
