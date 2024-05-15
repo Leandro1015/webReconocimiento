@@ -1,5 +1,5 @@
 <?php
-    require 'identificacion.php';
+    require './clases/identificacion.php';
     
     $idAlumno = $_POST['idAlumno'];
     $nombre = $_POST['nombre'];
@@ -15,4 +15,3 @@
     } else {
         echo "Error al registrar. Por favor, inténtalo de nuevo.";
     }
-?>

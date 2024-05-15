@@ -1,22 +1,18 @@
 <?php
-    include 'conexion.php';
-    $conectarInstancia = new Conectar();
-    $conexion = $conectarInstancia -> conexion;
-   
-    // Obtener los datos del formulario
-    $alumno = $_POST['alumno'];
+    require './clases/identificacion.php';
+
+    $identificacion = new Identificacion();
+
+    $nombre = $_POST['nombre'];
     $contrasenia = $_POST['contrasenia'];
 
-    // Consultar la base de datos para verificar el alumno y la contraseña
-    $sql = "SELECT * FROM alumno WHERE nombre='$alumno' AND contrasenia='$contrasenia'";
-    $resultado = $conexion->query($sql);
+    $resultado = $identificacion->iniciarSesion($nombre, $contrasenia);
 
-    if ($resultado->num_rows > 0) {
-        // Usuario y contraseña válidos, redirigir a la página de contraseña correcta
-        header("Location: ./views/exito.html");
-    } 
-    else {
-        // Usuario o contraseña inválidos, mostrar un mensaje de error en el formulario
+    if ($resultado !== false) {
+        // Usuario y contraseña válidos, redirigir a la página de éxito
+        header("Location: ./formularios/exito.html");
+    } else {
+        // Usuario o contraseña inválidos, redirigir a la página de inicio de sesión con un mensaje de error
         $mensaje = "Usuario y/o contraseña incorrectos";
-        header("Location: ./views/iniciodesesion.php?mensaje=$mensaje");
+        header("Location: ./formularios/iniciodesesion.php?mensaje=$mensaje");
     }

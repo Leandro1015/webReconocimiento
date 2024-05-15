@@ -22,7 +22,7 @@ CREATE TABLE reconocimiento (
     descripcion varchar(255) NOT NULL,
     idAlumEnvia tinyint unsigned NOT NULL,
     idAlumRecibe tinyint unsigned NOT NULL,
-	constraint pk_recon PRIMARY KEY (idReconocimiento),
+	  constraint pk_recon PRIMARY KEY (idReconocimiento),
     constraint fk_alumno_env FOREIGN KEY (idAlumEnvia) REFERENCES alumno(idAlumno),
     constraint fk_alumno_rec FOREIGN KEY (idAlumRecibe) REFERENCES alumno(idAlumno)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;

@@ -1,33 +1,37 @@
 <?php
-    require 'conexion.php';
+    include 'conexion.php';
 
-    class Identificacion extends Conexion
-    {
+    class Identificacion extends Conectar
+    {   
         public function registrar($idAlumno, $nombre, $correo, $contrasenia, $webReconocimiento)
         {
-            $sql = "INSERT INTO alumno (idAlumno, nombre, correo, contrasenia, webReconocimiento) VALUES ('$idAlumno', '$nombre', '$correo', '$contrasenia', '$webReconocimiento')";
+            $sql = "INSERT INTO alumno (idAlumno, nombre, correo, contrasenia, webReconocimiento) 
+                    VALUES ('$idAlumno', '$nombre', '$correo', '$contrasenia', '$webReconocimiento')";
+            
             $exito = $this->conexion->query($sql);
 
-            $this->conexion->close();
-
-            return $exito;
+            if ($exito) 
+            {
+                $this->conexion->close();
+                return true; 
+            } 
+            else {
+                return false; 
+            }
         }
-
-        public function iniciarSesion($correo, $contrasenia)
+        public function iniciarSesion($nombre, $contrasenia)
         {
-            $sql = "SELECT * FROM alumno WHERE nombre='$usuario' AND contrasenia='$contrasenia'";
+            // Consulta SQL para buscar el usuario por alumno y contraseña
+            $sql = "SELECT * FROM alumno WHERE nombre='$nombre' AND contrasenia='$contrasenia'";
             $resultado = $this->conexion->query($sql);
 
-            if ($resultado->num_rows > 0) {
+            // Verificar si se encontró un usuario
+            if ($resultado->num_rows == 1){
                 $fila = $resultado->fetch_assoc();
-                if ($contrasena === $fila['contrasena']) {
-                    return $fila;
-                }
+                return $fila;
+            } 
+            else {
+                return false;
             }
-
-            $this->conexion->close();
-
-            return false;
         }
     }
-?>

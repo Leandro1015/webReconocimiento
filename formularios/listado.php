@@ -7,8 +7,9 @@
     </head>
     <body>
         <h2>Listado de Reconocimientos</h2>
-        <?php
-            require './conexion.php';
+         <?php
+         /*
+            require '../conexion.php';
             $conectarInstancia = new Conectar();
             $conexion = $conectarInstancia -> conexion;
 
@@ -40,7 +41,7 @@
                 echo "</table>";
             } else {
                 echo "No se encontraron reconocimientos.";
-            }
+            }*/
         ?>
     </body>
 </html>

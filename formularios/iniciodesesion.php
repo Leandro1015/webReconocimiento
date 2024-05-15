@@ -10,8 +10,8 @@
         <div class="contenedor">
             <h2>Iniciar Sesión</h2>
             <form action="../verificar.php" method="post">
-                <label>Alumno:</label><br/>
-                <input type="text" name="alumno"><br/>
+                <label>Nombre del Alumno:</label><br/>
+                <input type="text" name="nombre"><br/>
 
                 <label>Contraseña:</label><br/>
                 <input type="password" name="contrasenia"><br/><br/>
