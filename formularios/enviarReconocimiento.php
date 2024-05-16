@@ -19,7 +19,13 @@
                 <label>Alumno que recibe:</label><br>
                 <select name="alumnoNombre">
                     <?php
-                        // Verificar si hay resultados
+                        require_once '../conexion.php';
+                        $conectarInstancia = new Conectar();
+                        $conexion = $conectarInstancia -> conexion;
+
+                        $sql = "SELECT idAlumno, nombre FROM alumno";
+                        $resultado = $conexion->query($sql);
+                    
                         if ($resultado->num_rows > 0) {
                             while ($fila = $resultado->fetch_assoc()) {
                                 echo "<option value='" . $fila['idAlumno'] . "'>" . $fila['nombre'] . "</option>";
