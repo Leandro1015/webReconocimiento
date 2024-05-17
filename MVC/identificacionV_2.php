@@ -1,24 +1,8 @@
 <?php
-    include 'conexion.php';
+    include 'conexion2.php';
 
     class Identificacion extends Conectar
     {   
-        public function registrar($idAlumno, $nombre, $correo, $contrasenia, $webReconocimiento)
-        {
-            $sql = "INSERT INTO alumno (idAlumno, nombre, correo, contrasenia, webReconocimiento) 
-                    VALUES ('$idAlumno', '$nombre', '$correo', '$contrasenia', '$webReconocimiento')";
-            
-            $exito = $this->conexion->query($sql);
-
-            if ($exito) 
-            {
-                $this->conexion->close();// cambiar por affect rows
-                return true; 
-            } 
-            else {
-                return false; 
-            }
-        }
         public function iniciarSesion($nombre, $contrasenia)
         {
             // Consulta SQL para buscar el usuario por alumno y contraseña
