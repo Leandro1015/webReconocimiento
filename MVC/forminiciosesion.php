@@ -9,7 +9,7 @@
     <body>
         <div class="contenedor">
             <h2>Iniciar Sesión</h2>
-            <form action="index2.php?c=csesion&m=comprobar" method="post">
+            <form action="index.php?c=csesion&m=comprobar" method="post">
                 <label>Nombre del Alumno:</label><br/>
                 <input type="text" name="nombre"><br/>
 
@@ -21,9 +21,13 @@
             <!-- Botón o enlace para redirigir a formRegistro.html -->
             <a href="formRegistro.html">¿No tienes una cuenta? ¡Regístrate!</a>
             <?php 
-                if (isset($_GET["mensaje"])) { 
-                    echo "<p class='error-message'>{$_GET['mensaje']}</p>"; 
-                } 
+                //if (isset($_GET["mensaje"])) { 
+                 //   echo "<p class='error-message'>.$_GET['mensaje'].</p>"; 
+               // } 
+               if (isset($algo){
+                
+               }
+
             ?>
         </div>
     </body>

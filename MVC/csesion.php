@@ -21,6 +21,10 @@
                     echo "ok";
                 } else {
                     // Usuario o contraseña inválidos
+                    
+                     //$msj="Usuario o contraseña incorrectos";
+                     //return $msj;
+                     //$this->nombre_vista = 'forminiciosesion.php';
                     echo "Usuario o contraseña incorrectos";
                 }
             }
